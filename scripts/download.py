@@ -7,7 +7,7 @@ Downloads the following:
 """
 
 from __future__ import print_function
-import urllib2
+import urllib3
 import sys
 import os
 import zipfile
@@ -17,7 +17,7 @@ def download(url, dirpath):
     filename = url.split('/')[-1]
     filepath = os.path.join(dirpath, filename)
     try:
-        u = urllib2.urlopen(url)
+        u = urllib3.urlopen(url)
     except Exception as e:
         print("URL %s failed to open" % url)
         raise Exception
